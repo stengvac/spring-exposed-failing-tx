@@ -52,9 +52,7 @@ class NestedTransactionApp(
      * 1, AbstractPlatformTransactionManager#handleExistingTransaction
      * 2, Decision is made by useSavepointForNestedTransaction() by default return true
      * If i understand correctly then for expose purposes this func should return false.
-     * Then `doBegin` is called and exposed Spring Manager can react.
-     *
-     * S
+     * Then `doBegin` is called and Exposed Spring Manager can react - to flag propagation Nested.
      */
     @PostConstruct
     fun `nested transaction was not created`() {
