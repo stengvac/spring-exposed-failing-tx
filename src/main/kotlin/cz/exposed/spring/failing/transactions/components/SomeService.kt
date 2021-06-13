@@ -37,7 +37,7 @@ class SomeService(
             //ex -> duplicate key
             e.printStackTrace()
             println("${TransactionManager.current().statementCount} should be 1")
-            //this fetch should work, because insert was run in nested tx
+            //this fetch should not throw ex with org.postgresql.util.PSQLException: ERROR: current transaction is aborted, commands ignored until end of transaction block
             someRepo.findById(someId)!!
         }
     }
