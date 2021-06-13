@@ -1,0 +1,8 @@
+spring:
+  datasource:
+    url: jdbc:tc:postgresql:12.6-alpine:///?currentSchema=some_schema?TC_INITSCRIPT=file:src/main/resources/init-tc.sql
+    driver-class-name: org.testcontainers.jdbc.ContainerDatabaseDriver
+    platform: postgresql
+    username: some_user
+    password: pwd
+#
