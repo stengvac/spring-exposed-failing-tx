@@ -75,7 +75,7 @@ class NestedTransactionApp(
         val r = transaction {
             someRepo.findById(exposedId)
         }
-        println("insert with exposed tx present ${r != null}")
+        println("insert with exposed dsl present in DB ${r != null}")
 
         //nested with JTA
         val someId = UUID.randomUUID()
