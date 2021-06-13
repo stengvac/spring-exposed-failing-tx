@@ -17,12 +17,8 @@ class RequireNewTransactionFailingApp(
     @PostConstruct
     fun `no context for Propagation-REQUIRES_NEW`() {
         val someId = UUID.randomUUID()
-        try {
-            someService.insertWithRequireNewTransaction(someId)
-            //no ex -> ok
-        } catch (ie: IllegalStateException) {
-            ie.printStackTrace()
-        }
+        someService.insertWithRequireNewTransaction(someId)
+        //no ex -> ok
 
         //works fine bcs in new transaction
         val entityFromDb = someService.findInTransaction(someId)
