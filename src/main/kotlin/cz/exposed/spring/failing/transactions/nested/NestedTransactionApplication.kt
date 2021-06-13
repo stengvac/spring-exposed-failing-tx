@@ -67,6 +67,7 @@ class NestedTransactionApp(
                 try {
                     someRepo.insertWithoutTransaction(exposedId)
                 } catch (e: ExposedSQLException) {
+                    //got duplicate key value violates unique constraint "some_table_pkey" as expected
                     e.printStackTrace()
                 }
             }
